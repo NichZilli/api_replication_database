@@ -6,6 +6,8 @@ gem "rails", github: "rails/rails", branch: "main"
 gem "propshaft"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
+# Use mysql2 for the MySQL connection as the database for Active Record
+gem "mysql2", "~> 0.5.7"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
@@ -18,7 +20,14 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
+
+# Sidekiq to transpass with Redis from one database to another [https://rubygems.org/gems/sidekiq]
+gem "sidekiq"
+gem "sidekiq-scheduler"
+
+# Redis to use connected with Sidekiq [https://rubygems.org/gems/redis]
+gem "redis"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]

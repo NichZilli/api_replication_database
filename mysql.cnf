@@ -1,0 +1,18 @@
+[mysqld]
+# substitui --skip-host-cache (deprecated)
+host_cache_size=0
+
+# Desabilita SSL/TLS explicitamente para remover o warning "invalid version"
+ssl=0
+
+# usar novo parâmetro para redo log
+innodb_redo_log_capacity=134217728
+
+# Define um path seguro para o PID file
+pid-file=/var/run/mysqld/mysqld.pid
+
+# recomendação para nova autenticação (evita aviso sobre mysql_native_password)
+default_authentication_plugin=caching_sha2_password
+
+# se não usa MySQL X Plugin (mysqlx) — desative para remover SSL/Plugin warnings
+skip_mysqlx
